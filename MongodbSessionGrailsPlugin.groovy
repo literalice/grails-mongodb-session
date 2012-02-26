@@ -5,7 +5,7 @@ class MongodbSessionGrailsPlugin {
     def grailsVersion = "1.3.3 > *"
     // the other plugins this plugin depends on
     def dependsOn = [databaseSession: "1.1.2 > *", mongodb: "1.0.0.RC1 > *"]
-    def loadAfter = ["databaseSession", "mongodb"]
+    def loadAfter = ["logging"]
 
     // resources that are excluded from plugin packaging
     def pluginExcludes = [
