@@ -1,3 +1,6 @@
+import com.monochromeroad.grails.plugins.mongodbsession.MongoSessionCleanupService
+import grails.plugin.databasesession.SessionProxyFilter
+
 class MongodbSessionGrailsPlugin {
     // the plugin version
     def version = "0.1"
@@ -46,7 +49,12 @@ class MongodbSessionGrailsPlugin {
     }
 
     def doWithSpring = {
-        // TODO Implement runtime spring config (optional)
+        sessionProxyFilter(SessionProxyFilter) {
+            persister = ref('mongoSessionPersisterService')
+        }
+        databaseCleanupService(MongoSessionCleanupService) {
+            grailsApplication = ref('grailsApplication')
+        }
     }
 
     def doWithDynamicMethods = { ctx ->

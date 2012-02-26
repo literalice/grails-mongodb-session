@@ -1,11 +1,14 @@
 import com.monochromeroad.grails.plugins.mongodbsession.sample.User
 import com.monochromeroad.grails.plugins.mongodbsession.sample.Role
+import com.monochromeroad.grails.plugins.mongodbsession.MongoPersistentSession
 
 class BootStrap {
 
     def springSecurityService
 
     def init = { servletContext ->
+        MongoPersistentSession.collection.remove([:])
+
         User.collection.remove([:])
         def username = "masatoshi"
         new User(username: username,

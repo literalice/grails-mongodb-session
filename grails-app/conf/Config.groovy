@@ -31,3 +31,7 @@ grails.plugins.springsecurity.authority.className = "com.monochromeroad.grails.p
 grails.plugins.springsecurity.dao.reflectionSaltSourceProperty = "username"
 grails.plugins.springsecurity.logout.afterLogoutUrl="/secure"
 
+// Database Session
+grails.plugin.databasesession.enabled = true
+grails.plugin.databasesession.deleteInvalidSessions = true
+
