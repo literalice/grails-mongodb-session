@@ -9,9 +9,10 @@ class MongodbSessionGrailsPlugin {
 
     // resources that are excluded from plugin packaging
     def pluginExcludes = [
-        "grails-app/views/error.gsp",
-        "web-app/css/**/*.*",
-        "web-app/js/**/*.*"
+        "grails-app/views/**/*",
+        "grails-app/controllers/**/*",
+        "grails-app/domain/com/monochromeroad/grails/plugins/mongodbsession/sample/*",
+        "web-app/**/*.*",
     ]
 
     // TODO Fill in these fields
