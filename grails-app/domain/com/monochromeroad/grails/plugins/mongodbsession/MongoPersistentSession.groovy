@@ -89,6 +89,7 @@ class MongoPersistentSession {
             throw new InvalidatedSessionException()
         }
     }
+
     static mapWith = "mongo"
 
     static mapping = {
