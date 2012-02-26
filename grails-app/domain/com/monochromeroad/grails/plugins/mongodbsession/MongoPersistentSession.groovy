@@ -42,7 +42,12 @@ class MongoPersistentSession {
 
     static List<String> getAttributeNames(String sessionId) throws InvalidatedSessionException {
         def session = MongoPersistentSession.collection.findOne([_id: sessionId], [attributes: 1])
-        session.attributes.keys()
+        def keySet = session.attributes.keySet() as Set<String>
+        if (keySet) {
+            return new ArrayList<String>(keySet)
+        } else {
+            return []
+        }
     }
 
     static void invalidate(String sessionId, Boolean delete) {
