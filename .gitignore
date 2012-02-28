@@ -3,6 +3,7 @@
 stacktrace.log
 /plugin.xml
 /target
+/web-app
 /out
 /web-app/WEB-INF/classes
 
