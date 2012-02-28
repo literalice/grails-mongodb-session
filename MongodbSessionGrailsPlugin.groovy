@@ -36,7 +36,7 @@ class MongodbSessionGrailsPlugin {
 //    def developers = [ [ name: "Joe Bloggs", email: "joe@bloggs.net" ]]
 
     // Location of the plugin's issue tracker.
-//    def issueManagement = [ system: "JIRA", url: "http://jira.grails.org/browse/GPMYPLUGIN" ]
+    def issueManagement = [ system: "JIRA", url: "http://jira.grails.org/browse/GPMONGODBSESSION" ]
 
     // Online location of the plugin's browseable source code.
     def scm = [url: 'https://github.com/literalice/grails-mongodb-session']
