@@ -15,9 +15,7 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
-        build(":tomcat:$grailsVersion",
-              ":svn:1.0.2",
-              ":release:1.0.1") {
+        build(":svn:1.0.2", ":release:1.0.1") {
             export = false
         }
         compile(":mongodb:1.0.0.RC4", ":database-session:1.1.2", ":webxml:1.4.1")
