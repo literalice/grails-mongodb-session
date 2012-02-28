@@ -1,7 +1,7 @@
 package com.monochromeroad.grails.plugins.mongodbsession
 
 import grails.plugin.spock.IntegrationSpec
-import org.codehaus.groovy.grails.plugins.springsecurity.GrailsUser
+import org.codehaus.groovy.grails.web.servlet.GrailsFlashScope
 
 /**
  * Spec for the mongo persister
@@ -31,17 +31,17 @@ class MongoSessionPersisterServiceSpec extends IntegrationSpec {
     def "Accesses to a attribute of a session"(def key) {
         def sessionId = UUID.randomUUID().toString()
         def username = "masatoshi"
-        def value = new GrailsUser(username, "passwd", true, false, false, false, [], "1")
+        def v = new GrailsFlashScope()
+        v.username = username
 
         when:
         mongoSessionPersisterService.create(sessionId)
-        mongoSessionPersisterService.setAttribute(sessionId, key, value)
+        mongoSessionPersisterService.setAttribute(sessionId, key, v)
         and:
         def sessionValue = mongoSessionPersisterService.getAttribute(sessionId, key)
 
         then:
-        sessionValue instanceof GrailsUser
-        sessionValue.id == value.id
+        sessionValue instanceof GrailsFlashScope
         sessionValue.username == username
 
         where:

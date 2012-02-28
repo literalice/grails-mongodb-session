@@ -20,10 +20,7 @@ grails.project.dependency.resolution = {
               ":release:1.0.1") {
             export = false
         }
-        compile(":mongodb:[1.0.RC1,)", ":database-session:[1.1.2,)")
-        compile(":spring-security-core:[1.2.7.2,)", ":webxml:[1.4.1,)") {
-            export = false
-        }
+        compile(":mongodb:1.0.0.RC4", ":database-session:1.1.2", ":webxml:1.4.1")
         test(":spock:0.6-SNAPSHOT") {
             export = false
         }

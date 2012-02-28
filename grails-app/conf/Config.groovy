@@ -23,15 +23,4 @@ log4j = {
     warn   'org.mortbay.log'
 }
 
-// Added by the Spring Security Core plugin:
-grails.plugins.springsecurity.useSessionFixationPrevention = true
-grails.plugins.springsecurity.userLookup.userDomainClassName = "com.monochromeroad.grails.plugins.mongodbsession.sample.User"
-grails.plugins.springsecurity.userLookup.authorityJoinClassName = "com.monochromeroad.grails.plugins.mongodbsession.sample.UserRole"
-grails.plugins.springsecurity.authority.className = "com.monochromeroad.grails.plugins.mongodbsession.sample.Role"
-grails.plugins.springsecurity.dao.reflectionSaltSourceProperty = "username"
-grails.plugins.springsecurity.logout.afterLogoutUrl="/secure"
-
-// Database Session
-grails.plugin.databasesession.enabled = true
-grails.plugin.databasesession.deleteInvalidSessions = true
 

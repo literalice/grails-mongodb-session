@@ -12,10 +12,7 @@ class MongodbSessionGrailsPlugin {
 
     // resources that are excluded from plugin packaging
     def pluginExcludes = [
-        "grails-app/views/**/*",
-        "grails-app/controllers/**/*",
-        "grails-app/domain/com/monochromeroad/grails/plugins/mongodbsession/sample/*",
-        "web-app/**/*.*",
+        "web-app/**/*.*"
     ]
 
     // TODO Fill in these fields
